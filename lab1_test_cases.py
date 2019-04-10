@@ -5,12 +5,12 @@ from lab1 import *
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
-        """add description here"""
+        """testing type errors with strings, None type , and empty list"""
         with self.assertRaises(TypeError):  # used to check for exception
             max_list_iter(None)
             max_list_iter(["asd", " d" , " asd"])
             max_list_iter([])
-
+        """ Testing with normal ints and negatives, same values, floats, and inf value"""
         self.assertEqual(max_list_iter([1000,3,1,23,-123]), 1000)
         self.assertEqual( max_list_iter([1,1,1]), 1)
         self.assertEqual( max_list_iter([-1,0,1]), 1)
@@ -18,10 +18,11 @@ class TestLab1(unittest.TestCase):
         self.assertEqual( max_list_iter([1,2,2,3,float("inf")]), float("inf"))
 
     def test_reverse_rec(self):
+        """testing with type error none and strings"""
         with self.assertRaises(TypeError):  # used to check for exception
             reverse_rec(None)
             reverse_rec(["asd", "asdf", "asdfasd"])
-
+        """testing with floats, ints, empty lists, same values, and single value list"""
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
         self.assertEqual(reverse_rec([1.1,2.2,3.3]),[3.3,2.2,1.1])
         self.assertEqual(reverse_rec([1123,2123,-3]),[-3,2123,1123])
@@ -30,12 +31,13 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(reverse_rec([1]),[1])
 
     def test_bin_search(self):
+        """testing with none type list and list with none type"""
         with self.assertRaises(TypeError):  # used to check for exception
             bin_search(0, 1,2, None)
             n = [1,2,3,None]
             bin_search(1, 0, len(n), n)
             
-        
+        """testing with ints, negatives, single value lists, and lists with none value"""
         list_val =[0,1,2,3,4,7 ]
         low = 0
 
