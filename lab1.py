@@ -28,20 +28,20 @@ def bin_search(target, low, high, int_list):  # must use recursion
 
    middleIdx = low +  (high - low) //2
    if( low> high ):
-      print(low, high, middleIdx)
       return None
    if( int_list == None or int_list[middleIdx] == None ):
       raise ValueError 
-      
+
    if int_list[middleIdx] == target:
       return middleIdx
    elif  target < int_list[middleIdx]: 
       return bin_search(target, low , middleIdx -1, int_list)
    elif target > int_list[middleIdx] : 
       return bin_search( target, middleIdx+1 , high, int_list)
+      
 list_val =[0,1,2,3,4,7,9,10 ]
-print(bin_search(1, 0 , len(list_val), list_val))
-print(bin_search(1000, 0 , len( list_val), list_val))
+print(bin_search(1, 0 , len(list_val)-1, list_val))
+print(bin_search(1000, 0 , len( list_val)-1, list_val))
 
 # 0  1 2 3 4 5 6 7 9 10
 #

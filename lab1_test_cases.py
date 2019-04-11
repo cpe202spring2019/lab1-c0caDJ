@@ -42,11 +42,11 @@ class TestLab1(unittest.TestCase):
         i = [-1,1,3,4,5] # odd length case
         j = [9]
         m = [0, 1, 2, None]
-        self.assertEqual(bin_search(0, low, len(list_val), list_val), 0 )
-        self.assertEqual(bin_search(-1, low, len(i), i) , 0)
-        self.assertEqual(bin_search(9, low, len(j), j) , 0)
-        self.assertEqual(bin_search(2, low, len(m), m) , 2)
-        self.assertEqual(bin_search(1000, low, len(i), i) , None)
+        self.assertEqual(bin_search(0, low, len(list_val)-1, list_val), 0 )
+        self.assertEqual(bin_search(-1, low, len(i)-1, i) , 0)
+        self.assertEqual(bin_search(9, low, len(j)-1, j) , 0)
+        self.assertEqual(bin_search(2, low, len(m)-1, m) , 2)
+        self.assertEqual(bin_search(1000, low, len(i)-1, i) , None)
 
 
 if __name__ == "__main__":
